@@ -1,0 +1,14 @@
+#!/bin/bash
+set -x
+hash composer 2>/dev/null && IS_COMPOSER_ON_HOST=true
+
+PUBLIC_KEY="$(bin/clinotty printenv | grep 'MAGENTO_AUTHEN_USER' 2>/dev/null)"
+PRIVATE_KEY="$(bin/clinotty printenv | grep 'MAGENTO_AUTHEN_PASSWORD' 2>/dev/null)"
+
+if [ -z "$PUBLIC_KEY" ] || [ -z "$PRIVATE_KEY" ]; then
+    echo "the enviroment variable has not availabled, plz check .env.local file" && exit 1
+fi
+
+if [ $IS_COMPOSER_ON_HOST ]; then
+    bin/clinotty  composer config --global http-basic.repo.magento.com ${MAGENTO_AUTHEN_USERNAME} ${MAGENTO_AUTHEN_PASSWORD}
+fi
