@@ -47,6 +47,7 @@ Note:
 - Step 13: Import database run: bin/mysql < [file.sql] ( file import database [file.sql] require in the composer folder)
 - Step 14: Check again: https://magento.test
 - If run sample data: 	
+
 			bin/cli bin/magento sampledata:deploy
 			bin/cli bin/magento setup:upgrade
 ------------------------
