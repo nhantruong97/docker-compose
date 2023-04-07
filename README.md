@@ -46,6 +46,9 @@ Note:
 - Step 12: Grant permission sql: sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' -i [file.sql]
 - Step 13: Import database run: bin/mysql < [file.sql] ( file import database [file.sql] require in the composer folder)
 - Step 14: Check again: https://magento.test
+- If run sample data: 	
+			bin/cli bin/magento sampledata:deploy
+			bin/cli bin/magento setup:upgrade
 ------------------------
 **Continue to move on to another project:**
 - Step 15: Require run command in the composer folder: docker-composer down
