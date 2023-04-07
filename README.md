@@ -39,7 +39,7 @@ Note:
 
 			sudo chown -R 1001 appdata/
 			sudo chmod 755 -R appdata/
-			
+- If run magento default run: bin/composer-setup 2.4.3(magento2 default version 2.4.3)
 - Step 10: Require run command in the composer folder: bin/setup
 - Step 11: Provide info: access magento via web browser: https://magento.test
 		All information about magento, database, domain, redis,... is in the file env
